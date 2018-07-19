@@ -1,0 +1,51 @@
+<?php
+App::uses('AppModel', 'Model');
+/**
+ * Course Model
+ *
+ * @property Teacher $Teacher
+ * @property Student $Student
+ */
+class Course extends AppModel {
+
+	public $displayField = 'name';
+
+	public $validate = array(
+		'name' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+			),
+		),
+		'description' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+			),
+		),
+	);// validate
+
+	public $belongsTo = array(
+		'Teacher' => array(
+			'className' => 'Teacher',
+			'foreignKey' => 'teacher_id'
+		)
+	);
+
+	public $hasAndBelongsToMany = array(
+		'Student' => array(
+			'className' => 'Student',
+			'joinTable' => 'students_courses',
+			'foreignKey' => 'course_id',
+			'associationForeignKey' => 'student_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
+
+}

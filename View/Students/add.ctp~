@@ -1,0 +1,7 @@
+<h1>Add student</h1>
+<?php 
+	echo $this->Form->create('Student');
+	echo $this->Form->input('name', array('label' => 'Nombre'));
+	echo $this->Form->input('last_name');
+	echo $this->Form->end('Save student');
+?>

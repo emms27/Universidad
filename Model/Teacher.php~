@@ -1,0 +1,21 @@
+<?php
+App::uses('AppModel', 'Model');
+
+class Teacher extends AppModel {
+	public $displayField = 'name';
+	public $hasMany = array(
+		'Course' => array(
+			'className' => 'Course',
+			'foreignKey' => 'teacher_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+}

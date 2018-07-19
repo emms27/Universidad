@@ -1,0 +1,7 @@
+<?php
+	class Student extends AppModel{
+			public $validate = array(
+				'name' => array('rule' => 'notEmpty', 'message' => 'El nombre no puede ser vacío'),
+				'apellido' => array('rule' => 'notEmpty', 'message' => 'El apellido no puede ser vacío')
+			);
+	}
